@@ -1,6 +1,14 @@
-@import "basics/base.scss";
-@import "basics/layout.scss";
+
 
 @import "setup/font.scss";
 @import "setup/variable.scss";
+@import "setup/mixins.scss";
 
+@import "basics/base.scss";
+@import "basics/layout.scss";
+
+@import "components/Home.scss";
+@import "components/Legend.scss";
+@import "components/Map.scss";
+@import "components/Nav.scss";
+@import "components/Section.scss";

@@ -1,21 +1,21 @@
 <template>
   <div id="app">
     <div class="l-container">
-      <SectionMap />
-      <NavMap />
+      <Section />
+      <Nav />
     </div>
   </div>
 </template>
 
 <script>
-import SectionMap from "./components/SectionMap.vue";
-import NavMap from "./components/NavMap.vue";
+import Section from "./components/Section.vue";
+import Nav from "./components/Nav.vue";
 
 export default {
   name: "app",
   components: {
-    SectionMap,
-    NavMap
+    Section,
+    Nav
   }
 };
 </script>

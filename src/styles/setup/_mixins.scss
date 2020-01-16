@@ -1,0 +1,16 @@
+// Media-queries
+
+// Small devices
+@mixin  sm-device{
+  @media (max-width: #{$screen-bp-min}){
+    @content;
+  }
+}
+
+
+// Large devices
+@mixin  lg-device{
+  @media (min-width: #{$screen-bp-min}){
+    @content;
+  }
+}

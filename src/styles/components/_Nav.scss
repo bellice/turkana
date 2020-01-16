@@ -1,0 +1,40 @@
+nav{
+  background-color: red;
+  display: flex;
+
+
+  @include sm-device{
+    grid-row: 2;
+  }
+
+  @include lg-device{
+    grid-column: 1/2;
+    grid-row: 1;
+    z-index: 1;
+  }
+
+}
+
+.nav-item{
+  border: 1px solid;
+
+  @include sm-device{
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  @include lg-device{
+    flex-grow: 1;
+    height: 60px;
+  }
+
+  span{
+    align-content: center;
+  }
+}
+
+.nav-map{
+  @include lg-device{
+  display: none;
+  }
+}
