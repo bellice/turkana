@@ -10,16 +10,24 @@ const router = new VueRouter({
   mode: "history",
   routes: [
     {
+      path: "/",
+      component: Home,
+      name: "root"
+    },
+    {
       path: "/accueil",
-      component: Home
+      component: Home,
+      name: "a"
     },
     {
       path: "/carte",
-      component: Map
+      component: Map,
+      name: "b"
     },
     {
       path: "/legende",
-      component: Legend
+      component: Legend,
+      name: "c"
     }
   ]
 });
