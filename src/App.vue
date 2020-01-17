@@ -1,23 +1,24 @@
 <template>
   <div id="app">
     <div class="l-container">
-      <Section />
-      <Nav />
+      <LayoutSection />
+      <LayoutNav />
     </div>
   </div>
 </template>
 
 <script>
-import Section from "./components/Section.vue";
-import Nav from "./components/Nav.vue";
+import LayoutSection from "./components/LayoutSection.vue";
+import LayoutNav from "./components/LayoutNav.vue";
 
 export default {
   name: "app",
   components: {
-    Section,
-    Nav
+    LayoutSection,
+    LayoutNav
   }
 };
+
 </script>
 
 <style lang="scss">

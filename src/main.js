@@ -3,7 +3,6 @@ import VueRouter from "vue-router";
 import App from "./App.vue";
 
 Vue.config.productionTip = false;
-
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -11,30 +10,30 @@ const router = new VueRouter({
   routes: [
     {
       path: "/",
-      component: Home,
+      component: NavigationHome,
       name: "root"
     },
     {
       path: "/accueil",
-      component: Home,
+      component: NavigationHome,
       name: "a"
     },
     {
       path: "/carte",
-      component: Map,
+      component: NavigationMap,
       name: "b"
     },
     {
       path: "/legende",
-      component: Legend,
+      component: NavigationLegend,
       name: "c"
     }
   ]
 });
 
-import Home from "./components/Home.vue";
-import Map from "./components/Map.vue";
-import Legend from "./components/Legend.vue";
+import NavigationHome from "./components/NavigationHome.vue";
+import NavigationMap from "./components/NavigationMap.vue";
+import NavigationLegend from "./components/NavigationLegend.vue";
 
 new Vue({
   router,
