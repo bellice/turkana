@@ -6,9 +6,11 @@
             >
           </div>
 
-          <div class="nav-map nav-item" ref="navmap">
+          <div class="nav-map nav-item" ref="navMap">
             <router-link class="nav-button" :to="{ name: 'b' }" tag="button"
-              ><span>Carte</span></router-link
+              >
+              <button ref="myButton" class="foo" @click="onClick">foo</button>
+              <span>Carte</span></router-link
             >
           </div>
 
@@ -25,15 +27,52 @@
 export default {
   name: "NavigationButton",
   mounted: function(){
-    this.$watch(
-      function (){
-        // eslint-disable-next-line no-unsed-vars
-        //observer.observe(this.$refs.navmap, { attributes: true});
-        // eslint-disable-next-line no-console
-        console.log(this.$refs.navmap)
+    this.observer = new MutationObserver(mutations => {
+      for (const m of mutations) {
+        const newValue = m.target.getAttribute(m.attributeName);
+        this.$nextTick(() => {
+          this.onClassChange(newValue, m.oldValue);
+        });
       }
-    ) 
+    });
+
+    this.observer.observe(this.$refs.myButton, {
+      attributes: true,
+      attributeOldValue : true,
+      attributeFilter: ['class'],
+    });
+  },
+  beforeDestroy: function() {
+    this.observer.disconnect();
+  },
+  methods: {
+    onClassChange(classAttrValue) {
+      const classList = classAttrValue.split(' ');
+      if (classList.includes('fully-in-viewport')) {
+        this.$refs.myButton.click();
+      }
+    },
+    onClick() {
+      requestIdleCallback(() => {
+        alert('foo clicked');
+      });
+    }
   }
 };
 
+
+
+
+
+/* 
+this.$watch(
+      function (){
+        // eslint-disable-next-line no-unsed-vars
+        //observer.observe(this.$refs.navMap, { attributes: true});
+        // eslint-disable-next-line no-console
+        console.log(this.$refs.navMap)
+      }
+    )  */
+
 </script>
+
