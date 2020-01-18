@@ -1,0 +1,17 @@
+ created(){
+    window.addEventListener("resize", this.myEvent)
+  },
+  destroyed(){
+    window.addEventListener("resize", this.myEvent)
+  },
+  methods:{
+    myEvent(){
+  
+      if(this.$refs.navmap.clientWidth == 0){
+        // eslint-disable-next-line no-console
+        console.log("Small device")
+      } else{
+        // eslint-disable-next-line no-console
+        console.log("Large device")
+      }
+    }

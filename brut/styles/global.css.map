@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "global.scss",
+        "basics/_base.scss",
+        "basics/_layout.scss",
+        "setup/_font.scss",
+        "setup/_variable.scss"
+    ],
+    "names": [],
+    "file": "global.css"
+}

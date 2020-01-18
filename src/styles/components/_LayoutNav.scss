@@ -1,7 +1,5 @@
 nav{
   background-color: red;
-  display: flex;
-
 
   @include sm-device{
     grid-row: 2;
@@ -13,6 +11,21 @@ nav{
     z-index: 1;
   }
 
+}
+
+
+#l-nav-button{
+  display: flex;
+
+  @include sm-device{
+    height: 100%;
+  }
+}
+
+#l-nav-content{
+  @include  sm-device{
+   display: none; 
+  }
 }
 
 .nav-item{
